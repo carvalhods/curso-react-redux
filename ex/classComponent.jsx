@@ -4,7 +4,7 @@ export default class ClassComponent extends Component {
 
     constructor(props) {
         super(props)
-        this.state = { value: props.initialValue, value2: 100 }
+        this.state = { value: props.initialValue }
     }
 
     sum(delta) {
