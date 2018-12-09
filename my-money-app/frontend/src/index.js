@@ -7,7 +7,7 @@ import multi from 'redux-multi'
 import thunk from 'redux-thunk'
 import * as serviceWorker from './serviceWorker';
 
-import Routes from './main/routes'
+import AuthOrApp from './main/authOrApp'
 import reducers from './main/reducers'
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
@@ -16,7 +16,7 @@ const store = applyMiddleware(multi, thunk, promise)(createStore)(reducers, devT
 
 ReactDOM.render(
     <Provider store={store}>
-        <Routes />
+        <AuthOrApp />
     </Provider>
     , document.getElementById('app')
 )
@@ -24,4 +24,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.register();
+serviceWorker.unregister();
